@@ -33,7 +33,7 @@ class RolePermissionSeeder extends Seeder
             'occupation' => 'Education',
             'avatar' => 'images/default-avatar.png',
             'email' => 'rio@owner.com',
-            'password' => bcrypt('12345')
+            'password' => bcrypt('rio123')
         ]);
 
         $userOwner->assignRole($ownerRole);

@@ -15,7 +15,7 @@ Route::get('/', [FrontController::class, 'index'])->name('front.index');
 //{course:slug} membuat dinamis : /details/belajar-mtk
 Route::get('/details/{course:slug}', [FrontController::class, 'details'])->name('front.details');
 
-Route::get('/details/{category:slug}', [FrontController::class, 'category'])->name('front.category');
+Route::get('/category/{category:slug}', [FrontController::class, 'category'])->name('front.category');
 Route::get('/pricing', [FrontController::class, 'pricing'])->name('front.pricing');
 
 Route::middleware('auth')->group(function () {
@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/checkout', [FrontController::class, 'checkout'])->name('front.checkout')
         ->middleware('role:student');
-    //post mengirim data keserver
+    //post mengirim data keserv
     Route::post('/checkout/store', [FrontController::class, 'checkout_store'])->name('front.checkout.store')
         ->middleware('role:student');
 
