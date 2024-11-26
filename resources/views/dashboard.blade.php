@@ -18,6 +18,10 @@
                         <x-dashboard-card icon="Students.png" title="Students" :value="$students" />
                         <x-dashboard-card icon="Teachers.png" title="Teachers" :value="$teachers" />
                         <x-dashboard-card icon="Category.png" title="Categories" :value="$categories" />
+                        <a href="{{ route('front.index') }}"
+                            class="w-fit font-bold py-4 px-6 bg-cyan-700 text-white rounded-full transition-colors duration-300 hover:bg-cyan-500">
+                            Explore Catalog
+                        </a>
                     </div>
                 @endrole
                 @role('teacher')
@@ -28,20 +32,29 @@
                             class="w-full h-full flex items-center justify-center font-bold py-4 px-6 bg-indigo-700 text-white rounded-lg transition-colors duration-300 hover:bg-indigo-600">
                             Create New Course
                         </a>
+                        <a href="{{ route('front.index') }}"
+                            class="w-fit font-bold py-4 px-6 bg-cyan-700 text-white rounded-full transition-colors duration-300 hover:bg-cyan-500">
+                            Explore Catalog
+                        </a>
                     </div>
                 @endrole
                 @role('student')
                     <h3 class="text-indigo-950 dark:text-indigo-200 font-bold text-2xl mb-4">Upgrade Skills Today
                         {{ Auth::user()->name }}</h3>
                     <p class="text-slate-500 dark:text-slate-400 text-base mb-6">
-                        Grow your career with experienced teachers in Side Course.
+                        Grow your career with experienced teachers in SideCourse.
                     </p>
                     <a href="{{ route('front.index') }}"
-                        class="w-fit font-bold py-4 px-6 bg-indigo-700 text-white rounded-full transition-colors duration-300 hover:bg-indigo-600">
+                        class="w-fit font-bold py-4 px-6 bg-cyan-700 text-white rounded-full transition-colors duration-300 hover:bg-cyan-500">
                         Explore Catalog
                     </a>
                 @endrole
             </div>
         </div>
     </div>
+
+    <!-- Tambahkan SweetAlert2 -->
+    @if (session('success'))
+        <div id="flash-message" data-message="{{ session('success') }}" data-type="success"></div>
+    @endif
 </x-app-layout>

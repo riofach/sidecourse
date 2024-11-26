@@ -141,18 +141,22 @@
                     </div>
                     <div>
                         <img src="{{ Storage::url($subscribeTransaction->proof) }}" alt="Proof_Transaction"
-                            class="transition-all duration-300 ease-in-out transform hover:scale-110">
+                            class="w-48 transition-all duration-300 ease-in-out transform hover:scale-110">
                     </div>
                 </div>
-                <hr class="my-5">
-                <form action="{{ route('admin.subscribe_transaction.update', $subscribeTransaction) }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <button type="submit"
-                        class="font-bold py-3 px-6 bg-indigo-700 text-white rounded-full transition-colors duration-300 hover:bg-indigo-600">
-                        Approve Transaction
-                    </button>
-                </form>
+                @if ($subscribeTransaction->is_paid)
+                @else
+                    <hr class="my-5">
+                    <form action="{{ route('admin.subscribe_transaction.update', $subscribeTransaction) }}"
+                        method="POST">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit"
+                            class="font-bold py-3 px-6 bg-indigo-700 text-white rounded-full transition-colors duration-300 hover:bg-indigo-600">
+                            Approve Transaction
+                        </button>
+                    </form>
+                @endif
             </div>
         </div>
     </div>

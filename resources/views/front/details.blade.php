@@ -159,8 +159,8 @@
                 onclick="openPage('Resources', this)">Resources</div>
             <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]"
                 onclick="openPage('Reviews', this)">Reviews</div>
-            <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]"
-                onclick="openPage('Discussions', this)">Discussions</div>
+            {{-- <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]"
+                onclick="openPage('Discussions', this)">Discussions</div> --}}
             <div class="tablink font-semibold text-lg h-[47px] transition-all duration-300 cursor-pointer hover:text-[#FF6129]"
                 onclick="openPage('Rewards', this)">Rewards</div>
         </div>
@@ -464,7 +464,7 @@
             </div>
         </div>
         <div class="w-full h-[51px] flex items-end border-t border-[#E7EEF2]">
-            <p class="mx-auto text-sm text-[#6D7786] -tracking-[2%]">All Rights Reserved Alqowy BuildWithAngga 2024</p>
+            <p class="mx-auto text-sm text-[#6D7786] -tracking-[2%]">All Rights Reserved Sidecourse FR 2024</p>
         </div>
     </footer>
 
