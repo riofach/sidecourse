@@ -56,7 +56,7 @@ class RegisteredUserController extends Controller
         //ctrl tahan + klik di registered dan click 2x pada class
         //setting register student
         event(new Registered($user));
-
+        $user->assignRole('student');
         Auth::login($user);
 
         // return redirect(route('dashboard', absolute: false));

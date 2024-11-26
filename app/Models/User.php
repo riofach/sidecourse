@@ -69,7 +69,7 @@ class User extends Authenticatable
             //mengambil transaksi langganan yang sudah dibayar
             ->where('is_paid', true)
             //Mengurutkan hasil query berdasarkan kolom update_at dalam urutan menurun, sehingga langganan terbaru akan berada di urutan pertama.
-            ->latest('update_at')
+            ->latest('updated_at')
             //Mengambil entri pertama dari hasil query, yang merupakan langganan terbaru yang sudah dibayar.
             ->first();
 
