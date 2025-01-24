@@ -117,7 +117,16 @@
             </div>
         </div>
         <div class="grid grid-cols-4 gap-[30px]">
-            <a href="{{ route('front.category', 'software-development') }}"
+            @foreach ($courses as $course)
+                <a href="{{ route('front.category', $course->category->slug) }}"
+                    class="card flex items-center p-4 gap-3 ring-1 ring-[#DADEE4] rounded-2xl hover:ring-2 hover:ring-[#FF6129] transition-all duration-300">
+                    <div class="w-[70px] h-[70px] flex shrink-0">
+                        <img src="{{ Storage::url($course->category->icon) }}" class="object-contain" alt="icon">
+                    </div>
+                    <p class="font-bold text-lg">{{ $course->category->name }}</p>
+                </a>
+            @endforeach
+            {{-- <a href="{{ route('front.category', 'software-development') }}"
                 class="card flex items-center p-4 gap-3 ring-1 ring-[#DADEE4] rounded-2xl hover:ring-2 hover:ring-[#FF6129] transition-all duration-300">
                 <div class="w-[70px] h-[70px] flex shrink-0">
                     <img src="assets/icon/Web Development 1.svg" class="object-contain" alt="icon">
@@ -130,8 +139,8 @@
                     <img src="assets/icon/Web Development 1-1.svg" class="object-contain" alt="icon">
                 </div>
                 <p class="font-bold text-lg">Digital Marketing</p>
-            </a>
-            <a href="{{ route('front.category', 'business-intelligence') }}"
+            </a> --}}
+            {{-- <a href="{{ route('front.category', 'business-intelligence') }}"
                 class="card flex items-center p-4 gap-3 ring-1 ring-[#DADEE4] rounded-2xl hover:ring-2 hover:ring-[#FF6129] transition-all duration-300">
                 <div class="w-[70px] h-[70px] flex shrink-0">
                     <img src="assets/icon/Web Development 1-2.svg" class="object-contain" alt="icon">
@@ -144,10 +153,10 @@
                     <img src="assets/icon/Web Development 1-3.svg" class="object-contain" alt="icon">
                 </div>
                 <p class="font-bold text-lg">Freelancing Journey</p>
-            </a>
+            </a> --}}
         </div>
         <div class="grid grid-cols-3 gap-[30px]">
-            <a href="{{ route('front.category', 'data-analytics') }}"
+            {{-- <a href="{{ route('front.category', 'data-analytics') }}"
                 class="card flex items-center p-4 gap-3 ring-1 ring-[#DADEE4] rounded-2xl hover:ring-2 hover:ring-[#FF6129] transition-all duration-300">
                 <div class="w-[70px] h-[70px] flex shrink-0">
                     <img src="assets/icon/Web Development 1-1.svg" class="object-contain" alt="icon">
@@ -167,7 +176,7 @@
                     <img src="assets/icon/Web Development 1.svg" class="object-contain" alt="icon">
                 </div>
                 <p class="font-bold text-lg">Copywriting</p>
-            </a>
+            </a> --}}
         </div>
     </section>
     <section id="Popular-Courses"
